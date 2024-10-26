@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: WeatherTeleBot
+
+server:
+  port: 8181
+
+telegram:
+  url: ${BOT_URL}
+  token: ${BOT_TOKEN}
+  name: ${BOT_NAME}
+
+
