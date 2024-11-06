@@ -34,13 +34,13 @@ public class CommandHandler {
         }
 
         switch (commandData) {
-            case START -> {
+            case start -> {
                 return mainManager.answerCommand(message, bot);
             }
-            case HELP -> {
+            case help -> {
                 return showCommandList(message.getChatId());
             }
-            case FORECAST -> {
+            case forecast -> {
                 return forecastManager.answerCommand(message, bot);
             }
         }

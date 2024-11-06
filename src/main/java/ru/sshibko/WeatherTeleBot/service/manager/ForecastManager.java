@@ -41,7 +41,7 @@ public class ForecastManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("Ввести город"),
                                 List.of(1),
-                                List.of(FORECAST_CITY_INPUT.name())
+                                List.of(fc_c_.name())
                         )
                 )
                 .build();
@@ -56,7 +56,7 @@ public class ForecastManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("Ввести город"),
                                 List.of(1),
-                                List.of(FORECAST_CITY_INPUT.name())
+                                List.of(fc_c_.name())
                         )
                 )
                 .build();
@@ -77,7 +77,7 @@ public class ForecastManager {
                             .text("Необходимо ввести название города!")
                             .build();
                 }
-                return cityInput(callbackQuery, data[2], bot);
+                return enteredCity(callbackQuery, data[2], bot);
             }
             case "s" -> {
                 return sendResult(callbackQuery, data[2], data[3], bot);
@@ -115,7 +115,7 @@ public class ForecastManager {
         for (WeatherData weatherData : weatherResponse.getWeatherData()) {
             sb.append("\uD83D\uDCCD +").append(number).append(")\n")
                     .append("Температура: ").append(weatherData.getTemperature()).append("\n")
-                    .append("Вероятность осадков: ").append(weatherData.getPop())
+                    .append("Вероятность осадков: ").append(weatherData.getPop()).append("%\n")
                     .append("Скорость ветра: ").append(weatherData.getWindSpeed()).append("\n")
                     .append("Описание: ").append(weatherData.getWeather().getDescription()).append("\n\n");
             number++;
@@ -128,7 +128,7 @@ public class ForecastManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("На главную"),
                                 List.of(1),
-                                List.of(MAIN.name())
+                                List.of(main.name())
                         )
                 )
                 .build();
@@ -143,7 +143,7 @@ public class ForecastManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("24 часа", "7 дней"),
                                 List.of(2),
-                                List.of(FORECAST_SEND_RESULT.name() + "h" + cityName, FORECAST_SEND_RESULT.name() + "d" + cityName)
+                                List.of(fc_s_.name() + "h_" + cityName, fc_s_.name() + "d_" + cityName)
                         )
                 )
                 .build();
@@ -173,23 +173,23 @@ public class ForecastManager {
                 ),
                 List.of(1, 8, 8, 8, 8, 2),
                 List.of(
-                        EMPTY.name(),
-                        FORECAST_CITY_INPUT.name() + currentInput + "Q", FORECAST_CITY_INPUT.name() + currentInput + "W",
-                        FORECAST_CITY_INPUT.name() + currentInput + "E", FORECAST_CITY_INPUT.name() + currentInput + "R",
-                        FORECAST_CITY_INPUT.name() + currentInput + "T", FORECAST_CITY_INPUT.name() + currentInput + "Y",
-                        FORECAST_CITY_INPUT.name() + currentInput + "U", FORECAST_CITY_INPUT.name() + currentInput + "I",
-                        FORECAST_CITY_INPUT.name() + currentInput + "O", FORECAST_CITY_INPUT.name() + currentInput + "P",
-                        FORECAST_CITY_INPUT.name() + currentInput + "A", FORECAST_CITY_INPUT.name() + currentInput + "S",
-                        FORECAST_CITY_INPUT.name() + currentInput + "D", FORECAST_CITY_INPUT.name() + currentInput + "F",
-                        FORECAST_CITY_INPUT.name() + currentInput + "G", FORECAST_CITY_INPUT.name() + currentInput + "H",
-                        FORECAST_CITY_INPUT.name() + currentInput + "J", FORECAST_CITY_INPUT.name() + currentInput + "K",
-                        FORECAST_CITY_INPUT.name() + currentInput + "L", FORECAST_CITY_INPUT.name() + currentInput + "Z",
-                        FORECAST_CITY_INPUT.name() + currentInput + "X", FORECAST_CITY_INPUT.name() + currentInput + "C",
-                        FORECAST_CITY_INPUT.name() + currentInput + "V", FORECAST_CITY_INPUT.name() + currentInput + "B",
-                        FORECAST_CITY_INPUT.name() + currentInput + "N", FORECAST_CITY_INPUT.name() + currentInput + "M",
-                        FORECAST_CITY_INPUT.name() + currentInput + "-", EMPTY.name(), EMPTY.name(), EMPTY.name(),
-                        EMPTY.name(), EMPTY.name(), FORECAST_ENTERED_CITY.name() + currentInput,
-                        currentInput.length() <= 1 ? FORECAST_CITY_INPUT.name() : FORECAST_CITY_INPUT.name()
+                        empty.name(),
+                        fc_c_.name() + currentInput + "Q", fc_c_.name() + currentInput + "W",
+                        fc_c_.name() + currentInput + "E", fc_c_.name() + currentInput + "R",
+                        fc_c_.name() + currentInput + "T", fc_c_.name() + currentInput + "Y",
+                        fc_c_.name() + currentInput + "U", fc_c_.name() + currentInput + "I",
+                        fc_c_.name() + currentInput + "O", fc_c_.name() + currentInput + "P",
+                        fc_c_.name() + currentInput + "A", fc_c_.name() + currentInput + "S",
+                        fc_c_.name() + currentInput + "D", fc_c_.name() + currentInput + "F",
+                        fc_c_.name() + currentInput + "G", fc_c_.name() + currentInput + "H",
+                        fc_c_.name() + currentInput + "J", fc_c_.name() + currentInput + "K",
+                        fc_c_.name() + currentInput + "L", fc_c_.name() + currentInput + "Z",
+                        fc_c_.name() + currentInput + "X", fc_c_.name() + currentInput + "C",
+                        fc_c_.name() + currentInput + "V", fc_c_.name() + currentInput + "B",
+                        fc_c_.name() + currentInput + "N", fc_c_.name() + currentInput + "M",
+                        fc_c_.name() + currentInput + "-", empty.name(), empty.name(), empty.name(),
+                        empty.name(), empty.name(), fc_e_.name() + currentInput,
+                        currentInput.length() <= 1 ? fc_c_.name() : fc_c_.name()
                                 + currentInput.substring(0, currentInput.length() - 1)
                 )
         );

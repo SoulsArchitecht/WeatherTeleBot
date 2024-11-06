@@ -12,7 +12,7 @@ import ru.sshibko.WeatherTeleBot.telegram.MyWeatherBot;
 
 import java.util.List;
 
-import static ru.sshibko.WeatherTeleBot.data.QueryData.FORECAST;
+import static ru.sshibko.WeatherTeleBot.data.QueryData.fc;
 import static ru.sshibko.WeatherTeleBot.data.TextConstant.MAIN_INVITE;
 
 @Service
@@ -29,7 +29,7 @@ public class MainManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("ПРОГНОЗ"),
                                 List.of(1),
-                                List.of(FORECAST.name())
+                                List.of(fc.name())
                         )
                 )
                 .build();
@@ -44,7 +44,7 @@ public class MainManager {
                         keyboardService.getInlineKeyboard(
                                 List.of("ПРОГНОЗ"),
                                 List.of(1),
-                                List.of(FORECAST.name())
+                                List.of(fc.name())
                         )
                 )
                 .build();

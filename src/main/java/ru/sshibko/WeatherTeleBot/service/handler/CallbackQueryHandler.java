@@ -16,8 +16,8 @@ import ru.sshibko.WeatherTeleBot.telegram.MyWeatherBot;
 @RequiredArgsConstructor
 public class CallbackQueryHandler {
 
-    MainManager mainManager;
-    ForecastManager forecastManager;
+    private final MainManager mainManager;
+    private final ForecastManager forecastManager;
 
     public BotApiMethod<?> answer(CallbackQuery callbackQuery, MyWeatherBot bot) {
 
@@ -31,16 +31,16 @@ public class CallbackQueryHandler {
         }
 
         switch (queryData) {
-            case MAIN -> {
+            case main -> {
                 return mainManager.answerQuery(callbackQuery, data, bot);
             }
-            case EMPTY -> {
+            case empty -> {
                 return AnswerCallbackQuery.builder()
                         .callbackQueryId(callbackQuery.getId())
                         .text("На эту кнопку не назначено действие")
                         .build();
             }
-            case FORECAST -> {
+            case fc -> {
                 return forecastManager.answerQuery(callbackQuery, data, bot);
             }
         }

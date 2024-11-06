@@ -1,12 +1,13 @@
 package ru.sshibko.WeatherTeleBot.data;
 
+/** for next values: MAIN, EMPTY, FORECAST, FORECAST_CITY_INPUT, FORECAST_SEND_RESULT, FORECAST_ENTERED_CITY */
 public enum QueryData {
-    MAIN ("main"),
-    EMPTY("empty"),
-    FORECAST("fc"),
-    FORECAST_CITY_INPUT("fc_c_"),
-    FORECAST_SEND_RESULT("fc_s_"),
-    FORECAST_ENTERED_CITY("fc_e_");
+    main("main"),
+    empty("empty"),
+    fc("fc"),
+    fc_c_("fc_c_"),
+    fc_s_("fc_s_"),
+    fc_e_("fc_e_");
 
 
     private final String name;

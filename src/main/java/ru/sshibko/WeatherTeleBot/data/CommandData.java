@@ -2,9 +2,9 @@ package ru.sshibko.WeatherTeleBot.data;
 
 public enum CommandData {
 
-    START("start"),
-    FORECAST("forecast"),
-    HELP("help");
+    start("start"),
+    forecast("forecast"),
+    help("help");
 
     public final String name;
 

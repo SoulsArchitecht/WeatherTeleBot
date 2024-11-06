@@ -10,7 +10,7 @@ import ru.sshibko.WeatherTeleBot.telegram.MyWeatherBot;
 
 import java.util.List;
 
-import static ru.sshibko.WeatherTeleBot.data.QueryData.MAIN;
+import static ru.sshibko.WeatherTeleBot.data.QueryData.main;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +26,7 @@ public class MessageHandler {
                     keyboardService.getInlineKeyboard(
                             List.of("На главную"),
                             List.of(1),
-                            List.of(MAIN.name())
+                            List.of(main.name())
                     )
                 )
                 .build();

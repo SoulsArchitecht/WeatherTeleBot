@@ -1,9 +1,7 @@
 package ru.sshibko.WeatherTeleBot.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.sshibko.WeatherTeleBot.telegram.MyWeatherBot;
@@ -20,8 +18,10 @@ public class BotController {
         return bot.onWebhookUpdateReceived(update);
     }
 
-    @PostMapping("/webhook")
-    public String setWebhook() {
-        return "Webhook has been set";
-    }
+    //TODO Best practice method to activate/deactivate webhook with telegram api
+/*    @GetMapping("{path}/bot${bot.getToken}/setWebhook")
+    public ResponseEntity<?> setWebhook(@RequestParam(value = "url") String webhookUrl, @PathVariable MyWeatherBot bot, @PathVariable String path) {
+        //bot.setWebhook(webhookUrl);
+        return ResponseEntity.ok("Webhook was set successfully");
+    }*/
 }

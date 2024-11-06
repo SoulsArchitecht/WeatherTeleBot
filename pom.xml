@@ -79,11 +79,11 @@
 					<target>17</target>
 					<encoding>UTF-8</encoding>
 					<annotationProcessorPaths>
-						<path>
+<!--						<path>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-configuration-processor</artifactId>
 							<version>3.3.4</version>
-						</path>
+						</path>-->
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
